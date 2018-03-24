@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Client;
 
-$ak = 'lVgtk5xr03Oz_uvkzDtQ8LtpiEUWx5tGEDUZVg1y';
+$ak = 'gwd_gV4gPKZZsmEOvAuNU1AcumicmuHooTfu64q5';
 $sk = '';
 $client = new Client([]);
 
@@ -13,9 +13,6 @@ $client = new Client([]);
 //    'data' => array(
 //        "uri" => "http://7xlv47.com1.z0.glb.clouddn.com/pulpsexy.jpg",
 //    ),
-//    'ops' => array(
-//        'op' => 'pulp'
-//    )
 //);
 //$param = \GuzzleHttp\json_encode($param);
 //$req = new Request('POST', 'https://argus.atlab.ai/v1/pulp', array(), $param);
@@ -26,7 +23,12 @@ $client = new Client([]);
 //video -- https://developer.qiniu.com/dora/manual/4258/video-guide-pulp
 $param = array(
     'data' => array(
-        "uri" => "http://7xlv47.com1.z0.glb.clouddn.com/pulpsexy.jpg",
+        "uri" => "http://liufangxing.qiniuts.com/test/uptesto.jpeg",
+    ),
+    'ops' => array(
+        array(
+            'op' => 'pulp',
+        ),
     ),
 );
 $param = \GuzzleHttp\json_encode($param);
