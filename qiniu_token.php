@@ -4,28 +4,38 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Client;
 
+$ak = 'lVgtk5xr03Oz_uvkzDtQ8LtpiEUWx5tGEDUZVg1y';
+$sk = '';
 $client = new Client([]);
 
+//image
+//$param = array(
+//    'data' => array(
+//        "uri" => "http://7xlv47.com1.z0.glb.clouddn.com/pulpsexy.jpg",
+//    ),
+//    'ops' => array(
+//        'op' => 'pulp'
+//    )
+//);
+//$param = \GuzzleHttp\json_encode($param);
+//$req = new Request('POST', 'https://argus.atlab.ai/v1/pulp', array(), $param);
+//$req = $req->withHeader("Content-Type", 'application/json');
+//$req = signReq($req, $ak, $sk);
+
+
+//video -- https://developer.qiniu.com/dora/manual/4258/video-guide-pulp
 $param = array(
     'data' => array(
         "uri" => "http://7xlv47.com1.z0.glb.clouddn.com/pulpsexy.jpg",
     ),
 );
-
 $param = \GuzzleHttp\json_encode($param);
-
-$req = new Request('POST', 'https://argus.atlab.ai/v1/pulp', array(), $param);
+$req = new Request('POST', 'https://argus.atlab.ai/v1/video/lfxtest', array(), $param);
 $req = $req->withHeader("Content-Type", 'application/json');
-
-$ak = 'lVgtk5xr03Oz_uvkzDtQ8LtpiEUWx5tGEDUZVg1y';
-$sk = '';
-
-
 $req = signReq($req, $ak, $sk);
 
 
 $response = $client->send($req, ['timeout' => 2]);
-
 var_dump($response);
 
 
